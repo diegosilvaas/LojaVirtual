@@ -1,13 +1,34 @@
 <?php
 
+session_start();
+
+require 'Cart.php';
+require 'Product.php';
+
+$products = [
+    1 => ['id' => '1', 'name' => 'geladeira', 'price' => 3000, 'quantity' => 1],
+    2 => ['id' => '2', 'name' => 'mouse', 'price' => 200, 'quantity' => 1],
+    3 => ['id' => '3', 'name' => 'teclado', 'price' => 300, 'quantity' => 1],
+    4 => ['id' => '4', 'name' => 'monitor', 'price' => 1500, 'quantity' => 1],
+];
+
 if (isset($_GET['add'])) {
     $id = strip_tags($_GET['id']);
-    var_dump($id);
+    $productInfo = $products[$id];
+    $product = new Product;
+    $product->setId($productInfo['id']);
+    $product->setName($productInfo['name']);
+    $product->setPrice($productInfo['price']);
+    $product->setQuantity($productInfo['quantity']);
+
+    $cart = new Cart();
+    $cart
 
 }
 
-?>
+var_dump($_SESSION['cart'] ?? []);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
