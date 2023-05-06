@@ -1,9 +1,9 @@
 <?php
 
-session_start();
-
 require 'Cart.php';
 require 'Product.php';
+
+session_start();
 
 $products = [
     1 => ['id' => '1', 'name' => 'geladeira', 'price' => 3000, 'quantity' => 1],
