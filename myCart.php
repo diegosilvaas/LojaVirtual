@@ -8,7 +8,7 @@ session_start();
 $cart= new Cart;
 $productsIncart = $cart->getCart();
 
-
+var_dump($productsIncart);
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +24,11 @@ $productsIncart = $cart->getCart();
 <ul>
     <?php foreach($productsIncart as $product): ?>
     <li><?php echo $product->getName ?></li>
+    <input type="text" value="<?php echo $product->getQuantity() ?>">
+    Price: <?php echo number_format ($product->getPrice(),) * $product->getQuantity() ?>
+        Subtotal: <?php echo $product->getPrice() * $product->getQuantity() ?>
+
+
     <?php endforeach; ?>
 </ul>
     
