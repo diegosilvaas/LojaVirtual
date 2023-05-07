@@ -25,8 +25,8 @@ var_dump($productsIncart);
     <?php foreach($productsIncart as $product): ?>
     <li><?php echo $product->getName ?></li>
     <input type="text" value="<?php echo $product->getQuantity() ?>">
-    Price: <?php echo number_format ($product->getPrice(),) * $product->getQuantity() ?>
-        Subtotal: <?php echo $product->getPrice() * $product->getQuantity() ?>
+    Price: R$ <?php echo number_format ($product->getPrice(), 2,','.') ?>
+        Subtotal: <?php number_format(->getPrice() * $product->getQuantity() ?>
 
 
     <?php endforeach; ?>
