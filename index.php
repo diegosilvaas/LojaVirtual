@@ -21,8 +21,10 @@ if (isset($_GET['add'])) {
     $product->setPrice($productInfo['price']);
     $product->setQuantity($productInfo['quantity']);
 
-    $cart = new Cart();
-    $cart
+
+
+    $cart = new Cart;
+    $cart->add($product);
 
 }
 
@@ -31,13 +33,17 @@ var_dump($_SESSION['cart'] ?? []);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         </head>
+
+
         <body>
+            <a href="/myCart.php"> Go to cart</a>
             <ul>
                 <li> Geladeira <a href="?id=1">Add</a>R$3000</li>
                 <li> Mouse <a href="?id=1">Add</a>R$200</li>
