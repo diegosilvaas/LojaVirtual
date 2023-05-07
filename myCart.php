@@ -9,6 +9,13 @@ $cart= new Cart;
 $productsIncart = $cart->getCart();
 
 var_dump($productsIncart);
+
+if(isset($_GET['id']))
+{
+    $id = strip_tags($_GET['id']);
+    $cart->remove($id);
+    header('Location: myCart.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,15 +28,22 @@ var_dump($productsIncart);
 </head>
 <body>
 
+<a href="/"> Go to home </a>
+
 <ul>
+    <?php if(count($productsIncart) <=0): ?>
+        Nenhum prdoduto no carrinho
+        <?php endif; ?>
     <?php foreach($productsIncart as $product): ?>
     <li><?php echo $product->getName ?></li>
     <input type="text" value="<?php echo $product->getQuantity() ?>">
-    Price: R$ <?php echo number_format ($product->getPrice(), 2,','.') ?>
-        Subtotal: <?php number_format(->getPrice() * $product->getQuantity() ?>
+    Price: R$ <?php echo number_format ($product->getPrice(), 2,',','.') ?>
+        Subtotal: R$ <?php echo number_format($product->getPrice() * $product->getQuantity(), 2,',', '.') ?>
+        <a href="?id=<?php echo $product->getId() ?>">remove</a>
 
 
     <?php endforeach; ?>
+    <li>Total: R$ <?php echo number_format ( $cart->$getTotal(), 2,', ', '. ');  ?></li>
 </ul>
     
 </body>
