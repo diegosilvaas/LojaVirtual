@@ -8,22 +8,22 @@ class Product
     private int $price;
     private int $quantity;
 
-    public function setId()
+    public function setId(int $id)
     {
         $this->id = $id;
     }
 
-    public function setName()
+    public function setName(string $name)
     {
         $this->name = $name;
     }
 
-    public function setPrice()
+    public function setPrice(int $price)
     {
         $this->price = $price;
     }
 
-    public function setQuantity()
+    public function setQuantity(int $quantity)
     {
         $this->quantity = $quantity;
     }
