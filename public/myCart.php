@@ -50,6 +50,8 @@ if (isset($_GET['id'])) {
     <li>Total: R$ <?php echo number_format($cart->getTotal(), 2, ',', '.'); ?></li>
   </ul>
 
+  <a href="checkout.php">Checkout</a>
+
 </body>
 
 </html>
