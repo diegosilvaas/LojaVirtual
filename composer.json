@@ -1,0 +1,17 @@
+{
+    "name": "diego/loja-virtual",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "diegosilvaas",
+            "email": "diegomecanica2014@gmail.com"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^10.12"
+    }
+}
