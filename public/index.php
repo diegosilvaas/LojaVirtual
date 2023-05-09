@@ -6,14 +6,7 @@ use app\library\Product;
 require '../vendor/autoload.php';
 
 session_start();
-
-$products = [
-  1 => ['id' => 1, 'name' => 'geladeira', 'price' => 1000, 'quantity' => 1],
-  2 => ['id' => 2, 'name' => 'mouse', 'price' => 100, 'quantity' => 1],
-  3 => ['id' => 3, 'name' => 'teclado', 'price' => 10, 'quantity' => 1],
-  4 => ['id' => 4, 'name' => 'monitor', 'price' => 5000, 'quantity' => 1],
-];
-
+$products = Product::getProducts();
 
 if (isset($_GET['id'])) {
   $id = strip_tags($_GET['id']);
@@ -23,6 +16,9 @@ if (isset($_GET['id'])) {
   $product->setName($productInfo['name']);
   $product->setPrice($productInfo['price']);
   $product->setQuantity($productInfo['quantity']);
+  $product->setImage($productInfo['image']);
+  
+
 
   $cart = new Cart;
   $cart->add($product);
@@ -42,23 +38,24 @@ var_dump($_SESSION['cart'] ?? []);
 </head>
 
 <body>
-  <a href="/mycart.php">Go to cart</a>
+  <a href="http://localhost/LojaVirtual/public/myCart.php">Go to cart</a>
 
   <ul>
-    <?php foreach($product as $products); ?>
-    <li>
-      <?php echo ucfirst($product['name']) ?>| 
-      <a href="?id=<?php echo $product['id'] ?></a> |
-      <?php echo number_format($product['price'], 2, ', ', '. ') ?>
-  </li>
-    <?php endforeach ?>
+    <?php foreach ($products as $product) { ?>
+      <li>
+        <?php echo ucfirst($product['name']); ?>|
+        <a href="?id=<?php echo $product['id']; ?>"></a> |
+        <?php echo number_format($product['price'], 2, ', ', '. '); ?>
+      </li>
+    <?php } ?>
   </ul>
-  <!-- <ul>
+
+  <ul>
     <li>Geladeira <a href="?id=1">Add</a> R$ 3000</li>
     <li>Mouse <a href="?id=2">Add</a> R$ 200</li>
     <li>Teclado <a href="?id=3">Add</a> R$ 3000</li>
     <li>Monitor <a href="?id=4">Add</a> $$ 1500</li>
-  </ul> -->
+  </ul>
 </body>
 
 </html>
