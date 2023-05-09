@@ -26,12 +26,12 @@ if (isset($_GET['id'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Loja Virtual</title>
 </head>
 
 <body>
 
-  <a href="/">Go to home</a>
+  <a href="http://localhost/LojaVirtual/public/index.php">Inicio</a>
 
   <ul>
     <?php if (count($productsInCart) <= 0) : ?>
@@ -41,7 +41,7 @@ if (isset($_GET['id'])) {
     <?php foreach ($productsInCart as $product) : ?>
       <li>
         <?php echo $product->getName(); ?>
-        <input type="text" value="<?php echo $product->getQuantity() ?>">
+        <input disabled type="text" value="<?php echo $product->getQuantity() ?>">
         Price: R$ <?php echo number_format($product->getPrice(), 2, ',', '.') ?>
         Subtotal: R$ <?php echo number_format($product->getPrice() * $product->getQuantity(), 2, ',', '.') ?>
         <a href="?id=<?php echo $product->getId(); ?>">remove</a>
@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
     <li>Total: R$ <?php echo number_format($cart->getTotal(), 2, ',', '.'); ?></li>
   </ul>
 
-  <a href="checkout.php">Checkout</a>
+  <a href="checkout.php">Pagamento</a>
 
 </body>
 
