@@ -1,32 +1,47 @@
 <?php
 
-require '../vendor/autoload.php';
-
-use Stripe\StripeClient;
-
 session_start();
 
-$private_key = 'sk_test_51N5Jd5H9VO3CuGNZYxetLjHIfQemLUuYYvJ2WnYJQV35pX3jevsdQktATzfgWk2fCW04aVLUP7MhKVreKg4FjIKq00P1OdEEcy'
+$products = $_SESSION['cart']['products'];
 
-
-$stripe = new StripeClient('$private_key');
-
-$checkout_session = $stripe->checkout->sessions->create([
-  'line_items' => [[
-    'price_data' => [
-      'currency' => 'brl',
-      'product_data' => [
-        'name' => 'camiseta',
-      ],
-      'unit_amount' => 20000,
-    ],
-    'quantity' => 4,
-  ]],
-  'mode' => 'payment',
-  'success_url' => 'http://localhost:4242/success',
-  'cancel_url' => 'http://localhost:4242/cancel',
-]);
-
-header("HTTP/1.1 303 See Other");
-header("Location: " . $checkout_session->url);
+echo "<pre>";
+    print_r($products);
+    echo "</pre>";
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> Resumo do pedido </h1>
+  <hr/>
+  <table>
+    <thead>
+      <tr>
+        <td>Foto do produto</td>
+        <td>Nome do produto</td>
+        <td>Quantidade do produto</td>
+        <td>Preço do produto</td>
+      </tr>
+    </thead>
+    <tbody> 
+    <?php foreach ($products as $product) { ?>
+      <?php var_dump($product->getName()) ; ?>
+      <tr>
+        <td><img src="<?php echo $product['image'] ?>" style="width: 80px; height: 80px; object-fit:cover;" />  </td>
+        <td> <?php echo $product['name'] ?></td>
+        <td><?php echo $product['quantity'] ?></td>
+        <td> R$ <?php echo number_format($product['price'], 2, ', ', '. ');?></td>
+        
+      </tr>
+    <?php } ?>   
+    </tbody>
+  </table>
+
+</body>
+</html>
