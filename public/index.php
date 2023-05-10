@@ -17,14 +17,11 @@ if (isset($_GET['id'])) {
   $product->setPrice($productInfo['price']);
   $product->setQuantity($productInfo['quantity']);
   $product->setImage($productInfo['image']);
+  $product->setCategory($productInfoo)['category'];
   
-
-
   $cart = new Cart;
   $cart->add($product);
 }
-
-var_dump($_SESSION['cart'] ?? []);
 
 ?>
 <!DOCTYPE html>
