@@ -75,11 +75,11 @@ class Product
   public static function getProducts()
   {
     return [
-      1 => ['id' => 1, 'name' => 'computador', 'price' => 1000, 'quantity' => 1, 'image'=>'product05.png', 'category'=>'informatica'],
-      2 => ['id' => 2, 'name' => 'mouse', 'price' => 100, 'quantity' => 1, 'image'=>'product01.png', 'category'=>'informatica'],
-      3 => ['id' => 3, 'name' => 'teclado', 'price' => 10, 'quantity' => 1, 'image'=>'product02.png', 'category'=>'informatica'],
-      4 => ['id' => 4, 'name' => 'monitor', 'price' => 5000, 'quantity' => 1, 'image'=>'product03.png', 'category'=>'informatica'],
-      5 => ['id' => 5, 'name' => 'notebook', 'price' => 5000, 'quantity' => 1, 'image'=>'product06.png', 'category'=>'informatica'],
+      1 => ['id' => 1, 'name' => 'fone de ouvido profissional', 'price' => 250, 'quantity' => 1, 'image'=>'product05.png', 'category'=>'informatica'],
+      2 => ['id' => 2, 'name' => 'notebook Asus i7', 'price' => 4000, 'quantity' => 1, 'image'=>'product01.png', 'category'=>'informatica'],
+      3 => ['id' => 3, 'name' => 'fone de ouvido preto', 'price' => 150, 'quantity' => 1, 'image'=>'product02.png', 'category'=>'informatica'],
+      4 => ['id' => 4, 'name' => 'notebook HP', 'price' => 4500, 'quantity' => 1, 'image'=>'product03.png', 'category'=>'informatica'],
+      5 => ['id' => 5, 'name' => 'notebook gamer', 'price' => 7000, 'quantity' => 1, 'image'=>'product06.png', 'category'=>'informatica'],
     ];
   }
   
