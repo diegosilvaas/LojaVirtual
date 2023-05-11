@@ -26,6 +26,7 @@ if (isset($_GET['id'])) {
   if (isset($_GET['id']) && isset($_GET['removeItemCart'])){
     $id = strip_tags($_GET['id']);
     $cart->remove($id);
+    header('Location: index2.php');
     
   }
 
@@ -174,8 +175,8 @@ if (isset($_GET['id'])) {
 											<h5>SUBTOTAL: R$ <?php echo number_format($totalPrice, 2, ',', '.')?></h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">Ver carrinho</a>
-											<a href="#">Pagamento  <i class="fa fa-arrow-circle-right"></i></a>
+											
+											<a style='width: 100%' href="checkout.php">Pagamento  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
 								</div>
