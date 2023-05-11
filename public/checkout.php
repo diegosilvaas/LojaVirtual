@@ -88,7 +88,7 @@ session_start();
 										<option value="1">Eletrônico</option>
 									</select>
 									<input class="input" placeholder="Pesquisar">
-									<button class="search-btn">Search</button>
+									<button class="search-btn">Pesquisar</button>
 								</form>
 							</div>
 						</div>
@@ -185,13 +185,8 @@ session_start();
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Inicio</a></li>
-						<li><a href="#">Ofertas</a></li>
-						<li><a href="#">Categorias</a></li>
-						<li><a href="#">Notebooks</a></li>
-						<li><a href="#">Celulares</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessorios</a></li>
+						<li class="active"><a href="http://localhost/LojaVirtual/public/index2.php">Inicio</a></li>
+						
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -206,10 +201,10 @@ session_start();
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Checkout</h3>
+						<h3 class="breadcrumb-header">Pagamento</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
-							<li class="active">Checkout</li>
+							<li><a href="http://localhost/LojaVirtual/public/index2.php">inicio</a></li>
+							<li class="active">Pagamento</li>
 						</ul>
 					</div>
 				</div>
@@ -277,7 +272,7 @@ session_start();
                 ?>
 
 								<div class="order-col">
-									<div><?php echo $product->getQuantity(); ?>x <?php echo $product->getName();?></div>
+									<div> <?php echo $product->getQuantity(); ?> x <?php echo $product->getName();?></div>
 									<div><?php echo number_format($total, 2, ',', '.')?> </div>
 								</div>
                 <?php } ?>
@@ -312,7 +307,19 @@ session_start();
 								Estou de acordo com os termos de serviços 
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">FINALIZAR PEDIDO</a>
+						
+						<!-- <a href="#" class="primary-btn order-submit">FINALIZAR PEDIDO</a> -->
+						<script>
+								function funcao1()
+								{
+								alert("Seu pedido foi realizado com sucesso");
+								}
+								</script>
+								</head>
+								<body>
+
+								<input style="width:200;height:200" class="primary-btn order-submit" type="button" onclick="funcao1()" value="FINALIZAR PEDIDO" />
+
 					</div>
 					<!-- /Order Details -->
 				</div>
@@ -322,40 +329,7 @@ session_start();
 		</div>
 		<!-- /SECTION -->
 
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-							<form>
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
+		
 		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->
@@ -368,12 +342,12 @@ session_start();
 					<div class="row">
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<h3 class="footer-title">Sobre</h3>
+								<p>loja virtual de departamento de informatica</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+									<li><a href="#"><i class="fa fa-map-marker"></i>Cuiabá - MT</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>(65) 984626420</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>diegosilvaf.dev@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -382,11 +356,11 @@ session_start();
 							<div class="footer">
 								<h3 class="footer-title">Categories</h3>
 								<ul class="footer-links">
-									<li><a href="#">Hot deals</a></li>
-									<li><a href="#">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
+									<li><a href="#">Ofertas</a></li>
+									<li><a href="#">Notebook</a></li>
+									<li><a href="#">Celulares</a></li>
 									<li><a href="#">Cameras</a></li>
-									<li><a href="#">Accessories</a></li>
+									<li><a href="#">Acessorios</a></li>
 								</ul>
 							</div>
 						</div>
@@ -395,26 +369,26 @@ session_start();
 
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">Information</h3>
+								<h3 class="footer-title">Informações</h3>
 								<ul class="footer-links">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Contact Us</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Orders and Returns</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
+									<li><a href="#">Sobre nós</a></li>
+									<li><a href="#">Contatos</a></li>
+									<li><a href="#">Politica de privacidade</a></li>
+									<li><a href="#">Pedidos e devoluções</a></li>
+									<li><a href="#">Termos e condições</a></li>
 								</ul>
 							</div>
 						</div>
 
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">Service</h3>
+								<h3 class="footer-title">Serviços</h3>
 								<ul class="footer-links">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">View Cart</a></li>
-									<li><a href="#">Wishlist</a></li>
-									<li><a href="#">Track My Order</a></li>
-									<li><a href="#">Help</a></li>
+									<li><a href="#">Minha Conta</a></li>
+									<li><a href="#">Ver carrinho</a></li>
+									<li><a href="#">Lista de desejos</a></li>
+									<li><a href="#">Acompanhar meu pedido</a></li>
+									<li><a href="#">Ajuda</a></li>
 								</ul>
 							</div>
 						</div>
@@ -440,9 +414,9 @@ session_start();
 								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
 							</ul>
 							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							
+								Direitos autorais &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados | Diego Ferreira <i  aria-hidden="true"></i>  </a>
+							
 							</span>
 						</div>
 					</div>
@@ -464,3 +438,4 @@ session_start();
 
 	</body>
 </html>
+
