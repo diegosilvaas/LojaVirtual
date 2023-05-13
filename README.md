@@ -1,5 +1,12 @@
 
-<h1 align="center"> Loja virtual </h1> 
+<h1 align="center"> Loja Virtual </h1> 
+
+
+
+  <div align="center">
+    <img width="300" title="![logo loja virtual]" src="https://github.com/diegosilvaas/LojaVirtual/assets/122392637/4d2995fe-4e6a-4b0e-b113-9e6abd0dc642"/>
+</div>
+  
 
 ## Descrição do projeto
 #### Este projeto é um e-commerce que permite adicionar produtos ao carrinho, remover itens e finalizar a compra. Ele foi desenvolvido utilizando PHP orientado a objetos e Bootstrap para a interface, O objetivo é criar uma experiência de compra fácil e intuitiva para o usuário.
